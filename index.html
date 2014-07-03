@@ -30,7 +30,6 @@
 							<li class="fragment">Javascript y sus trucos</li>
 							<li class="fragment">JSON</li>
 							<li class="fragment">Closure scopes</li>
-							<li class="fragment">Strict</li>
 						</ul>
 						<p class="fragment"><a href="#/3">Angular</a></p>
 						<ul>
@@ -71,7 +70,6 @@
 							<li><a href="#/3/1">Javascript y sus trucos</a></li>
 							<li><a href="#/4/1">JSON</a></li>
 							<li><a href="#/5/1">Closure scopes</a></li>
-							<li><a href="#/6/1">Strict</a></li>
 						</ul>
 					</section>
 
@@ -83,7 +81,7 @@
 						<p class="fragment">
 							Una variable puede ser un valor, funcion, objeto, whatever
 						</p>
-						<p class="fragment">El poder de <span style="font-style: italic;">undefined</span></p>
+						<p class="fragment">Los misterios de <span style="font-style: italic;">undefined</span></p>
 						<p class="fragment">
 							Cualquier valor que no exista se convierte en undefined
 						</p>
@@ -109,9 +107,6 @@ var soyUnaFuncionConParametros = function(nombre, apellido) {
 };
 soyUnaFuncionConParametros("Dario", "Diaz");
 
-for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-	var node = nodes[i];
-}
 					</code></pre>
 					</section>
 
@@ -123,8 +118,8 @@ var soyUnConstructor = function(nombre, apellido, miEdad) {
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.edad = miEdad;
-	this.mostrarDatos = function() {
-		return this.nombre + " - " + this.apellido;
+	this.mostrarDatos = function(variableInterna) {
+		return this.nombre + " - " + this.apellido + " - " + variableInterna;
 	};
 };
 //Creamos un objeto
@@ -135,105 +130,153 @@ console.log(objeto.mostrarDatos());
 					</code></pre>
 					</section>
 
-					<!-- end Fast JS: JS and tricks -->
-
-					<!-- Fast JS: JSON -->
+					<!-- Lo misterios de undefined -->
 
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-
-					<!-- end Fast JS: JSON -->
-
-				</section> 
-				<!-- end Fast JS -->
-
-
-				<!-- Angular -->
-
-				<section>
-					<section>
-						<h2>Angular</h2>
-						<ul>
-							<li class="fragment">Expression y {{Brackets}}</li>
-							<li class="fragment">Modules, services, y mas...</li>
-							<li class="fragment">Scopes y scopes</li>
-							<li class="fragment">MVC en angular</li>
-							<li class="fragment">Angular Builts-in</li> <!-- Ivo -->
-							<li class="fragment">DI y buenas practicas</li> <!-- Ivo -->
-							<li class="fragment">Angular routing con ui-router</li> <!-- Ivo -->
-							<li class="fragment">Estructura de carpetas</li> <!-- Ivo -->
-						</ul>
-					</section>
-
-					<!-- Angular: Expression and brackets -->
-
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-
-					<!-- end Angular: Expression and brackets -->
-
-				</section> 
-				<!-- end Angular -->
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
+						<h2>Los misterios de <span style="font-style: italic;">undefined</span></h2>
+						<pre><code class="fragment" data-trim contenteditable>
+//Creamos una function con 3 parametros
+var miFuncion = function(param1, param2, param3) {
+	console.log('Parametro 1: ', param1);
+	console.log('Parametro 2: ', param2);
+	console.log('Parametro 3: ', param3);
+};
+//La llamamos con un parametro de menos
+miFuncion("Hola", "Mundo");
 					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+					</section>
+
+					<!-- end Los misterios de undefined -->
+
+					<!-- Dinamismo everywhere -->
 
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
+						<h2>Dinamismo everywhere</h2>
+						<pre><code class="fragment" data-trim contenteditable>
+//Creamos un objeto por cualquier forma
+var miConstructor = function(param1, param2) {
+	this.nombre = param1;
+	this.apellido = param2;
+};
+//Creamos un objeto
+var miObj = {};
+var miObj2 = new Object();
+var objeto = new miConstructor("Dario", "Diaz");
+objeto.otraPropiedad = 3;
+miObj.valorBooleano = true;
+miObj2.metodo = function(parametro) {
+	console.log("Funcion de miObj2:" , parametro + 1);
+};
+					</code></pre>
 					</section>
+
+					<!-- end Dinamismo everywhere -->
+
+					<!-- end Fast JS: JS and tricks -->
 				</section>
+
+				<!-- Fast JS: JSON -->
+				<section>
+					<section>
+						<h2>JSON (JavaScript Object Notation)</h2>
+						<p class="fragment">Es una forma de describir objetos en JS</p>
+						<p class="fragment">Un JSON puede solo tener atributos (ya sean valores, otros objetos, arrays, etc)</p>
+						<p class="fragment">La caracteristica fundamental de un JSON es que se puede escribir (materializar) y leer (desmaterializar) como un String</p>
+
+					</section>
+
+					<section>
+						<h2>JSON | Ejemplo simple</h2>
+						<pre><code data-trim contenteditable>
+{
+"propiedad": "valor",
+"otraPropiedad": 3
+}
+						</code></pre>
+
+						<h2 class="fragment">JSON | Ejemplo completo</h2>
+						<pre><code class="fragment" code data-trim contenteditable>
+{
+"propiedad": "valor",
+"otraPropiedad": 3,
+"array": ["elemento1", "elemento2"],
+"objeto": { "idem": true, "idem2": 345 }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Conviertiendo objetos en JSON & viceversa</h2>
+						<p class="fragment">JS nos provee 2 funciones para transformar String en JSON o convertir nuestros objetos en JSON</p>
+						<p class="fragment">JSON.parse(string): trata de transformar un string en objeto JSON, si falla lanza excepcion</p>
+						<p class="fragment">JSON.stringify(objeto): transforma un objeto en un String JSON</p>
+					</section>
+
+					<section>
+						<h2>JSON.parse() | Ejemplo</h2>
+						<pre><code data-trim contenteditable>
+var respuestaDelServer = '{
+"propiedad": "valor",
+"otraPropiedad": 3
+}';
+var objParseado = JSON.parse(respuestaDelServer);
+console.log(objParseado);
+						</code></pre>
+
+						<h2 class="fragment">JSON.stringify() | Ejemplo</h2>
+						<pre><code class="fragment" code data-trim contenteditable>
+//Creamos un objeto normal
+var obj = {};
+obj.nombre = "Dario";
+obj["apellido"] = "Diaz";
+var parseo = JSON.stringify(obj);
+console.log(parseo);
+						</code></pre>
+					</section>
+				</section>					
+				<!-- end Fast JS: JSON -->
+
+					<!-- Closure scopes -->
+			<section>
+				<section>
+					<h2>Closure scopes</h2>
+					<p class="fragment">Scope: ambito o contexto donde co-existen variables y metodos</p>
+					<p class="fragment">Closure Scope: expresiones (normalmente funciones o metodos) que pueden acceder a otros ambitos</p>
+				</section>
+				<section>
+					<h2>Closure scopes | Ejemplo</h2>
+					<a href="ejemplos/scopes.html" target="_blank">Ejemplo</a>
+				</section>
+			</section>
+		</section> 
+		<!-- end Fast JS -->
+
+		<!-- Angular -->
+			<section>
+				<section>
+					<h2>Angular</h2>
+					<ul>
+						<li><a href="#/7">Expression y {{Brackets}}</a></li>
+						<li><a href="#/8">Modules, services, y mas...</a></li>
+						<li><a href="#/9">Scopes y scopes</a></li>
+						<li><a href="#/10">MVC en angular</a></li>
+						<li><a href="#/11">Angular Builts-in</a></li> <!-- Ivo -->
+						<li><a href="#/12">DI y buenas practicas</a></li> <!-- Ivo -->
+						<li><a href="#/13">Angular routing con ui-router</a></li> <!-- Ivo -->
+						<li><a href="#/14">Estructura de carpetas</a></li> <!-- Ivo -->
+					</ul>
+				</section>
+			</section> 
+
+			<!-- Angular: Expression and brackets -->
+			<section>
+				<section>
+					<h2>Expresiones en Angular</h2>
+				</section>
+				<!-- end Angular: Expression and brackets -->
+
+				<!-- end Angular -->
+			</section>
 
 			</div>
 
