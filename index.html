@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Angular 'n' Cookies</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
@@ -21,17 +21,18 @@
 					<h3>by: Ivo Parun Rua, Dario Diaz</h3>
 				</section>
 
+				<!-- start Agenda -->
 				<section>
 					<h2>Agenda</h2>
 					<p>
-						<p class="fragment">Fast JS</p>
+						<p class="fragment"><a href="#/3">Fast JS</a></p>
 						<ul>
 							<li class="fragment">Javascript y sus trucos</li>
 							<li class="fragment">JSON</li>
 							<li class="fragment">Closure scopes</li>
 							<li class="fragment">Strict</li>
 						</ul>
-						<p class="fragment">Angular</p>
+						<p class="fragment"><a href="#/3">Angular</a></p>
 						<ul>
 							<li class="fragment">Expression y {{Brackets}}</li>
 							<li class="fragment">Modules, services, y mas...</li>
@@ -48,7 +49,7 @@
 				<section>
 					<h2>Agenda</h2>
 					<p>
-						<p class="fragment">Ending</p>
+						<p class="fragment"><a href="#/3">Ending</a></p>
 						<ul>
 							<li class="fragment">Angular y Jboss</li> <!-- Ivo -->
 							<li class="fragment">Angular y Require JS</li> <!-- Ivo -->
@@ -56,23 +57,88 @@
 							<li class="fragment">presentation.commit()</li>
 						</ul>
 					</p>
+					<p>
+						<a href="#/1/1">Agenda</a>
+					</p>
 				</section>
+				<!-- end Agenda -->
 
+				<!-- Fast JS -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>Fast JS</h2>
+						<ul>
+							<li><a href="#/3/1">Javascript y sus trucos</a></li>
+							<li><a href="#/4/1">JSON</a></li>
+							<li><a href="#/5/1">Closure scopes</a></li>
+							<li><a href="#/6/1">Strict</a></li>
+						</ul>
 					</section>
+
+					<!-- Fast JS: JS and tricks -->
+
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h2>Javascript y sus trucos</h2>
+						<p class="fragment">La variable poderosa</p>
+						<p class="fragment">
+							Una variable puede ser un valor, funcion, objeto, whatever
+						</p>
+						<p class="fragment">El poder de <span style="font-style: italic;">undefined</span></p>
+						<p class="fragment">
+							Cualquier valor que no exista se convierte en undefined
+						</p>
+						<p class="fragment">Dinamismo everywhere</p>
+						<p class="fragment">
+							Cualquier objeto es dinamico, esto es, pueden agregarse nuevas propiedades (atributos y/o metodos) sin que esten definidos previamente
+						</p>
 					</section>
+
+					<section>
+						<h2>La variable poderosa como funcion</h2>
+						<pre><code class="fragment" data-trim contenteditable>
+//Creamos una variable que guarde nuestra funcion
+var soyUnaFuncion = function() {
+	console.log('Js Rulez!');
+};
+//La llamamos
+soyUnaFuncion();
+
+//Puede recibir parametros
+var soyUnaFuncionConParametros = function(nombre, apellido) {
+	console.log('Hola' + nombre + ", " + apellido);
+};
+soyUnaFuncionConParametros("Dario", "Diaz");
+
+for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+	var node = nodes[i];
+}
+					</code></pre>
+					</section>
+
+					<section>
+						<h2>La variable poderosa como objeto</h2>
+						<pre><code class="fragment" data-trim contenteditable>
+//Creamos una variable que guarde nuestra funcion constructora
+var soyUnConstructor = function(nombre, apellido, miEdad) {
+	this.nombre = nombre;
+	this.apellido = apellido;
+	this.edad = miEdad;
+	this.mostrarDatos = function() {
+		return this.nombre + " - " + this.apellido;
+	};
+};
+//Creamos un objeto
+var objeto = new soyUnConstructor("Dario", "Diaz", 23);
+//Lo usamos como cualquier objeto
+console.log(objeto.nombre);
+console.log(objeto.mostrarDatos());
+					</code></pre>
+					</section>
+
+					<!-- end Fast JS: JS and tricks -->
+
+					<!-- Fast JS: JSON -->
+
 					<section>
 						<h2>Basement Level 2</h2>
 						<p>Cornify</p>
@@ -80,21 +146,41 @@
 							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
 						</a>
 					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+
+					<!-- end Fast JS: JSON -->
+
+				</section> 
+				<!-- end Fast JS -->
+
+
+				<!-- Angular -->
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
+					<section>
+						<h2>Angular</h2>
+						<ul>
+							<li class="fragment">Expression y {{Brackets}}</li>
+							<li class="fragment">Modules, services, y mas...</li>
+							<li class="fragment">Scopes y scopes</li>
+							<li class="fragment">MVC en angular</li>
+							<li class="fragment">Angular Builts-in</li> <!-- Ivo -->
+							<li class="fragment">DI y buenas practicas</li> <!-- Ivo -->
+							<li class="fragment">Angular routing con ui-router</li> <!-- Ivo -->
+							<li class="fragment">Estructura de carpetas</li> <!-- Ivo -->
+						</ul>
+					</section>
+
+					<!-- Angular: Expression and brackets -->
+
+					<section>
+						<h2>Basement Level 1</h2>
+						<p>Press down or up to navigate.</p>
+					</section>
+
+					<!-- end Angular: Expression and brackets -->
+
+				</section> 
+				<!-- end Angular -->
 
 				<section data-markdown>
 					<script type="text/template">
@@ -132,14 +218,6 @@ function linkify( selector ) {
 }
 					</code></pre>
 					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
 				</section>
 
 					<section>
