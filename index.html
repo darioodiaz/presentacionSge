@@ -288,24 +288,24 @@ console.log(parseo);
                     <section>
                         <h2>ng-bind o {{ }}</h2>
                         <pre>
-                            <code code data-trim >
-                                $scope.todos = [ {accion:'Caminar'}, {accion:'Correr'}]
+                            <code code >
+$scope.todos = [ {accion:'Caminar'}, {accion:'Correr'}]
 
-                                <div>Hay {{todos.length}} elementos.</div>
+<div>Hay {{todos.length}} elementos.</div>
 
-                                <div>
-                                    Hay <span ng-bind="todos.length"></span> elementos.
-                                </div>
+<div>
+    Hay <span ng-bind="todos.length"></span> elementos.
+</div>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>ng-bind-template</h2>
                         <pre>
-                            <code code data-trim >
-                                <div ng-bind-template="Primero: {{todos[0].accion}}. Segundo: {{todos[1].accion}}">
+                            <code code >
+<div ng-bind-template="Primero: {{todos[0].accion}}. Segundo: {{todos[1].accion}}">
 
-                                </div>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -316,10 +316,10 @@ console.log(parseo);
                             Crea una vinculación utilizando la propiedad innerHTML de un elemento HTML.
                         </p>
                         <pre>
-                            <code code data-trim >
-                                $scope.contenidoHTML = '<a href="#" class="btn btn-default">Link</a>';
+                            <code code >
+$scope.contenidoHTML = '<a href="#" class="btn btn-default">Link</a>';
 
-                                <div><p ng-bind-html="contenidoHTML"></p></div>
+<div><p ng-bind-html="contenidoHTML"></p></div>
 
                             </code>
                         </pre>
@@ -328,31 +328,31 @@ console.log(parseo);
                         <h2>ng-non-bindable</h2>
                         <p>Previene que AngularsJS vincule alguna expression</p>
                         <pre>
-                            <code code data-trim >
+                            <code code >
 
-                                <div ng-non-bindable>
-                                    AngularJS usa {{ y }} caracteres como plantilla.
-                                </div>
+<div ng-non-bindable>
+    AngularJS usa {{ y }} caracteres como plantilla.
+</div>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>ng-model</h2>
                         <pre>
-                            <code code data-trim >
+                            <code code  >
 
-                                <div id="todoPanel2" class="panel" ng-controller="defaultCtrl">
-                                    <h3 class="panel-header">To Do List</h3>
+<div id="todoPanel2" class="panel" ng-controller="defaultCtrl">
+    <h3 class="panel-header">To Do List</h3>
 
-                                    <div class="well">
-                                        <div>El primer item es: {{todos[0].accion}}</div>
-                                    </div>
-                                    <div class="form-group well">
-                                        <label for="primerItem">Set First Item:</label>
-                                        <input id="primerItem" name="primerItem" class="form-control"
-                                               ng-model="todos[0].accion"/>
-                                    </div>
-                                </div>
+    <div class="well">
+        <div>El primer item es: {{todos[0].accion}}</div>
+    </div>
+    <div class="form-group well">
+        <label for="primerItem">Set First Item:</label>
+        <input id="primerItem" name="primerItem" class="form-control"
+               ng-model="todos[0].accion"/>
+    </div>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -365,16 +365,16 @@ console.log(parseo);
                     <section>
                         <h2>ng-cloak</h2>
                         <pre>
-                            <code code data-trim >
-                                <div class="well">
-                                    <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
-                                        <label ng-cloak>
-                                            <input type="radio" ng-model="data.mode"
-                                                   value="{{button}}" ng-checked="$first">
-                                            {{button}}
-                                        </label>
-                                    </div>
-                                </div>
+                            <code code  >
+<div class="well">
+    <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
+        <label ng-cloak>
+            <input type="radio" ng-model="data.mode"
+                   value="{{button}}" ng-checked="$first">
+            {{button}}
+        </label>
+    </div>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -382,9 +382,9 @@ console.log(parseo);
                         <h2>ng-include</h2>
                         <p>src, onload, autoscroll</p>
                         <pre>
-                            <code code data-trim >
+                            <code code >
 
-                                <ng-include src="'table.html'" onload="" autoscroll=""></ng-include>
+<ng-include src="'table.html'" onload="" autoscroll=""></ng-include>
 
                             </code>
                         </pre>
@@ -394,23 +394,23 @@ console.log(parseo);
                         <h2>ng-repeat</h2>
                         <p>$index, $first, $middle, $last, $even, $odd </p>
                         <pre>
-                            <code data-trim>
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Acción</th>
-                                        <th>Listo</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr ng-repeat="item in todos">
-                                        <td>{{$index + 1}}</td>
-                                        <td>{{item.accion}}</td>
-                                        <td>{{item.completo}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <code >
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Acción</th>
+        <th>Listo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in todos">
+        <td>{{$index + 1}}</td>
+        <td>{{item.accion}}</td>
+        <td>{{item.completo}}</td>
+    </tr>
+    </tbody>
+</table>
                             </code>
                         </pre>
                     </section>
@@ -418,16 +418,16 @@ console.log(parseo);
                     <section>
                         <h2>ng-repeat-start y ng-repeat-end</h2>
                         <pre>
-                            <code data-trim >
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
-                                        <h3 class="panel-title">{{subMenu.titulo}}</h3>
-                                    </div>
-                                    <div class="list-group" ng-repeat-end>
-                                        <a ng-repeat="item in subMenu.items" class="list-group-item">
-                                            {{item.nombre}}</a>
-                                    </div>
-                                </div>
+                            <code >
+<div class="panel panel-default">
+    <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
+        <h3 class="panel-title">{{subMenu.titulo}}</h3>
+    </div>
+    <div class="list-group" ng-repeat-end>
+        <a ng-repeat="item in subMenu.items" class="list-group-item">
+            {{item.nombre}}</a>
+    </div>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -435,34 +435,34 @@ console.log(parseo);
                     <section>
                         <h2>ng-switch</h2>
                         <pre>
-                            <code data-trim >
-                                <div ng-switch on="data.mode">
-                                    <div ng-switch-when="Table">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Action</th>
-                                                <th>Done</th>
-                                            </tr>
-                                            </thead>
-                                            <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
-                                                <td>{{$index + 1}}</td>
-                                                <td ng-repeat="prop in item">{{prop}}</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div ng-switch-when="List">
-                                        <ol>
-                                            <li ng-repeat="item in todos">
-                                                {{item.action}}<span ng-if="item.complete"> (Done)</span>
-                                            </li>
-                                        </ol>
-                                    </div>
-                                    <div ng-switch-default>
-                                        Select another option to display a layout
-                                    </div>
-                                </div>
+                            <code  >
+<div ng-switch on="data.mode">
+    <div ng-switch-when="Table">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Action</th>
+                <th>Done</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
+                <td>{{$index + 1}}</td>
+                <td ng-repeat="prop in item">{{prop}}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-switch-when="List">
+        <ol>
+            <li ng-repeat="item in todos">
+                {{item.action}}<span ng-if="item.complete"> (Done)</span>
+            </li>
+        </ol>
+    </div>
+    <div ng-switch-default>
+        Select another option to display a layout
+    </div>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -477,80 +477,80 @@ console.log(parseo);
                     <section>
                         <h2>ng-class y ng-style</h2>
                         <pre>
-                            <code data-trim >
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Action</th>
-                                        <th>Done</th>
-                                    </tr>
-                                    </thead>
-                                    <tr ng-repeat="item in todos" ng-class="active">
-                                        <td>{{$index + 1}}</td>
-                                        <td>{{item.action}}</td>
-                                        <td ng-style="{'background-color': lightgreen}">
-                                            {{item.complete}}
-                                        </td>
-                                    </tr>
-                                </table>
+                            <code>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Action</th>
+        <th>Done</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in todos" ng-class="active">
+        <td>{{$index + 1}}</td>
+        <td>{{item.action}}</td>
+        <td ng-style="{'background-color': lightgreen}">
+            {{item.complete}}
+        </td>
+    </tr>
+</table>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>ng-class-even y ng-class-odd</h2>
                         <pre>
-                            <code data-trim >
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Action</th>
-                                        <th>Done</th>
-                                    </tr>
-                                    </thead>
-                                    <tr ng-repeat="item in todos" ng-class-even="settings.Rows"
-                                        ng-class-odd="settings.Columns">
-                                        <td>{{$index + 1}}</td>
-                                        <td>{{item.action}}</td>
-                                        <td>{{item.complete}}</td>
-                                    </tr>
-                                </table>
+                            <code  >
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Action</th>
+        <th>Done</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in todos" ng-class-even="settings.Rows"
+        ng-class-odd="settings.Columns">
+        <td>{{$index + 1}}</td>
+        <td>{{item.action}}</td>
+        <td>{{item.complete}}</td>
+    </tr>
+</table>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>ng-hide y ng-show</h2>
                         <pre>
-                            <code data-trim >
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Action</th>
-                                        <th>Done</th>
-                                    </tr>
-                                    </thead>
-                                    <tr ng-repeat="item in todos">
-                                        <td>{{$index + 1}}</td>
-                                        <td>{{item.action}}</td>
-                                        <td>
-                                            <span ng-hide="item.complete">(Incomplete)</span>
-                                            <span ng-show="item.complete">(Done)</span>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <code  >
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Action</th>
+        <th>Done</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in todos">
+        <td>{{$index + 1}}</td>
+        <td>{{item.action}}</td>
+        <td>
+            <span ng-hide="item.complete">(Incomplete)</span>
+            <span ng-show="item.complete">(Done)</span>
+        </td>
+    </tr>
+</table>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>ng-if</h2>
                         <pre>
-                            <code data-trim >
-                                <td>
-                                    <span ng-if="!item.complete">(Incomplete)</span>
-                                    <span ng-if="item.complete">(Done)</span>
-                                </td>
+                            <code  >
+<td>
+    <span ng-if="!item.complete">(Incomplete)</span>
+    <span ng-if="item.complete">(Done)</span>
+</td>
                             </code>
                         </pre>
                     </section>
@@ -602,8 +602,8 @@ console.log(parseo);
                             para que los navegadores con HTML5 no realize validaciones y deje todo en manos de AngularJS
                         </p>
                         <pre>
-                            <code data-trim >
-                                <form name="myForm" novalidate ng-submit="addUser(newUser)"></form>
+                            <code >
+<form name="myForm" novalidate ng-submit="addUser(newUser)"></form>
                             </code>
                         </pre>
                     </section>
@@ -630,13 +630,13 @@ console.log(parseo);
 
                     <section>
                         <pre>
-                            <code data-trim >
+                            <code>
 
-                                <div>Valid: {{myForm.$valid}}</div>
+<div>Valid: {{myForm.$valid}}</div>
 
-                                <button type="submit"
-                                        class="btn btn-primary btn-block"
-                                        ng-disabled="myForm.$invalid">OK</button>
+<button type="submit"
+        class="btn btn-primary btn-block"
+        ng-disabled="myForm.$invalid">OK</button>
 
                             </code>
                         </pre>
@@ -660,15 +660,15 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim >
-                                <div class="well">
-                                    Message: {{message}}
-                                    <div> Valid:
-                                        <span class="summary"
-                                              ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">{{myForm.$valid}}
-                                        </span>
-                                    </div>
-                                </div>
+                            <code>
+<div class="well">
+    Message: {{message}}
+    <div> Valid:
+        <span class="summary"
+              ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">{{myForm.$valid}}
+        </span>
+    </div>
+</div>
 
                             </code>
                         </pre>
@@ -697,30 +697,30 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim >
-                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
-                                    <form name="myForm" novalidate>
-                                        <div class="well">
-                                            <div class="form-group">
-                                                <label>Text:</label>
-                                                <input name="sample" class="form-control" ng-model="inputValue"
-                                                       ng-required="requireValue" ng-minlength="3"
-                                                       ng-maxlength="10" ng-pattern="matchPattern">
-                                            </div>
-                                        </div>
-                                        <div class="well">
-                                            <p>Required Error: {{myForm.sample.$error.required}}</p>
+                            <code  >
+<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+    <form name="myForm" novalidate>
+        <div class="well">
+            <div class="form-group">
+                <label>Text:</label>
+                <input name="sample" class="form-control" ng-model="inputValue"
+                       ng-required="requireValue" ng-minlength="3"
+                       ng-maxlength="10" ng-pattern="matchPattern">
+            </div>
+        </div>
+        <div class="well">
+            <p>Required Error: {{myForm.sample.$error.required}}</p>
 
-                                            <p>Min Length Error: {{myForm.sample.$error.minlength}}</p>
+            <p>Min Length Error: {{myForm.sample.$error.minlength}}</p>
 
-                                            <p>Max Length Error: {{myForm.sample.$error.maxlength}}</p>
+            <p>Max Length Error: {{myForm.sample.$error.maxlength}}</p>
 
-                                            <p>Pattern Error: {{myForm.sample.$error.pattern}}</p>
+            <p>Pattern Error: {{myForm.sample.$error.pattern}}</p>
 
-                                            <p>Element Valid: {{myForm.sample.$valid}}</p>
-                                        </div>
-                                    </form>
-                                </div>
+            <p>Element Valid: {{myForm.sample.$valid}}</p>
+        </div>
+    </form>
+</div>
                             </code>
                         </pre>
                     </section>
@@ -735,59 +735,59 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim >
-                                <div id="todoPanel1" class="panel" ng-controller="defaultCtrl">
-                                    <form name="myForm" novalidate>
-                                        <div class="well">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input name="sample" type="checkbox" ng-model="inputValue"
-                                                           ng-true-value="Hurrah!" ng-false-value="Boo!">
-                                                    This is a checkbox
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="well">
-                                            <p>Model Value: {{inputValue}}</p>
-                                        </div>
-                                    </form>
-                                </div>
+                            <code  >
+<div id="todoPanel1" class="panel" ng-controller="defaultCtrl">
+    <form name="myForm" novalidate>
+        <div class="well">
+            <div class="checkbox">
+                <label>
+                    <input name="sample" type="checkbox" ng-model="inputValue"
+                           ng-true-value="Hurrah!" ng-false-value="Boo!">
+                    This is a checkbox
+                </label>
+            </div>
+        </div>
+        <div class="well">
+            <p>Model Value: {{inputValue}}</p>
+        </div>
+    </form>
+</div>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Los atributos de los elementos textarea son los mismos que los del input</h2>
                         <pre>
-                            <code data-trim >
-                                <div class="form-group">
-                                    <textarea name="sample" cols="40" rows="3"
-                                              ng-model="textValue"
-                                              ng-required="requireValue" ng-minlength="3"
-                                              ng-maxlength="10" ng-pattern="matchPattern">
-                                    </textarea>
-                                </div>
+                            <code  >
+<div class="form-group">
+    <textarea name="sample" cols="40" rows="3"
+              ng-model="textValue"
+              ng-required="requireValue" ng-minlength="3"
+              ng-maxlength="10" ng-pattern="matchPattern">
+    </textarea>
+</div>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Usando los elementos select</h2>
                         <pre>
-                            <code data-trim >
-                                <div class="form-group">
-                                    <label>Select an Action:</label>
-                                    <select ng-model="selectValue"
-                                            ng-options="item.action for item in todos">
-                                    </select>
-                                </div>
+                            <code  >
+<div class="form-group">
+    <label>Select an Action:</label>
+    <select ng-model="selectValue"
+            ng-options="item.action for item in todos">
+    </select>
+</div>
                             </code>
                         </pre>
                         <p>Se puede definir que valor vincular al modelo de la siguiente manera</p>
                         <pre>
-                            <code data-trim >
-                                <select ng-model="selectValue"
-                                        ng-options="item.id as item.action for item in todos">
-                                    <option value="">(Pick One)</option>
-                                </select>
+                            <code >
+<select ng-model="selectValue"
+        ng-options="item.id as item.action for item in todos">
+    <option value="">(Pick One)</option>
+</select>
                             </code>
                         </pre>
                     </section>
@@ -796,19 +796,19 @@ console.log(parseo);
 
                         <p>se utiliza para agrupar items basados en algun atributo</p>
                         <pre>
-                            <code data-trim >
-                                <div class="well">
-                                    <div class="form-group">
-                                        <label>Select an Action:</label>
-                                        <select ng-model="selectValue"
-                                                ng-options="item.action group by item.place for item in todos">
-                                            <option value="">(Pick One)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="well">
-                                    <p>Selected: {{selectValue || 'None'}}</p>
-                                </div>
+                            <code  >
+<div class="well">
+    <div class="form-group">
+        <label>Select an Action:</label>
+        <select ng-model="selectValue"
+                ng-options="item.action group by item.place for item in todos">
+            <option value="">(Pick One)</option>
+        </select>
+    </div>
+</div>
+<div class="well">
+    <p>Selected: {{selectValue || 'None'}}</p>
+</div>
                             </code>
                         </pre>
                         <img src="images/optgroup.jpg">
@@ -823,21 +823,21 @@ console.log(parseo);
                     <section>
                         <h2>Implicitamente por el nombre de los parámetros de la función</h2>
                         <pre>
-                            <code data-trim >
-                                function MyController($scope, greeter) {
-                                // ...
-                                }
+                            <code >
+function MyController($scope, greeter) {
+// ...
+}
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Usando la anotación propiedad $inject</h2>
                          <pre>
-                            <code data-trim >
-                                var MyController = function(renamed$scope, renamedGreeter) {
-                                ...
-                                }
-                                MyController['$inject'] = ['$scope', 'greeter'];
+                            <code>
+var MyController = function(renamed$scope, renamedGreeter) {
+...
+}
+MyController['$inject'] = ['$scope', 'greeter'];
                             </code>
                         </pre>
                     </section>
@@ -846,10 +846,10 @@ console.log(parseo);
 
                         <p>Maneras informar que componente inyectar</p>
                          <pre>
-                            <code data-trim >
-                                someModule.factory('greeter', ['$window', function(renamed$window) {
-                                // ...
-                                }]);
+                            <code >
+someModule.factory('greeter', ['$window', function(renamed$window) {
+// ...
+}]);
                             </code>
                         </pre>
                     </section>
@@ -859,46 +859,46 @@ console.log(parseo);
                     <section>
                         <h2>Factory Methods</h2>
                          <pre>
-                            <code data-trim >
-                                angular.module('myModule', [])
-                                .factory('serviceId', ['depService', function(depService) {
-                                ...
-                                }])
-                                .directive('directiveName', ['depService', function(depService) {
-                                ...
-                                }])
-                                .filter('filterName', ['depService', function(depService) {
-                                ...
-                                }]);
+                            <code >
+angular.module('myModule', [])
+.factory('serviceId', ['depService', function(depService) {
+...
+}])
+.directive('directiveName', ['depService', function(depService) {
+...
+}])
+.filter('filterName', ['depService', function(depService) {
+...
+}]);
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Module Methods</h2>
                          <pre>
-                            <code data-trim >
-                                angular.module('myModule', [])
-                                .config(['depProvider', function(depProvider){
-                                ...
-                                }])
-                                .run(['depService', function(depService) {
-                                ...
-                                }]);
+                            <code>
+angular.module('myModule', [])
+.config(['depProvider', function(depProvider){
+...
+}])
+.run(['depService', function(depService) {
+...
+}]);
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Controllers</h2>
                          <pre>
-                            <code data-trim >
-                                someModule.controller('MyController', ['$scope', 'dep1', 'dep2', function($scope, dep1,
-                                dep2) {
-                                ...
-                                $scope.aMethod = function() {
-                                ...
-                                }
-                                ...
-                                }]);
+                            <code >
+someModule.controller('MyController', ['$scope', 'dep1', 'dep2', function($scope, dep1,
+dep2) {
+...
+$scope.aMethod = function() {
+...
+}
+...
+}]);
                             </code>
                         </pre>
                     </section>
@@ -927,17 +927,17 @@ console.log(parseo);
                     <section>
                         <h2>Ejemplo</h2>
                         <pre>
-                            <code data-trim>
-                                <!-- in index.html -->
-                                <body ng-controller="MainCtrl">
-                                <section ui-view></section>
-                                </body>
+                            <code >
+<!-- in index.html -->
+<body ng-controller="MainCtrl">
+<section ui-view></section>
+</body>
                             </code>
-                            <code data-trim>
-                                // in app-states.js (or whatever you want to name it)
-                                $stateProvider.state('contacts', {
-                                template: '<h1>My Contacts</h1>'
-                                })
+                            <code >
+// in app-states.js (or whatever you want to name it)
+$stateProvider.state('contacts', {
+template: '<h1>My Contacts</h1>'
+})
                             </code>
                         </pre>
                     </section>
@@ -976,35 +976,35 @@ console.log(parseo);
                         <h2>Resolve</h2>
                         <p>El controlador no se cargará hasta que no se hayan resuelto todas las dependencias</p>
                         <pre>
-                            <code data-trim>
-                                $stateProvider.state('myState', {
-                                  controller: function(){},
-                                  resolve:{
-                                    objetoSimple:function(){
-                                      return {value:'asd'};
-                                    },
-                                    //Retorna un promise, es lo mas utilizado
-                                    promiseObj:  function($http){
-                                      return $http({method: 'GET', url: '/someUrl'});
-                                    }
-                                  }
-                                }
+                            <code >
+$stateProvider.state('myState', {
+  controller: function(){},
+  resolve:{
+    objetoSimple:function(){
+      return {value:'asd'};
+    },
+    //Retorna un promise, es lo mas utilizado
+    promiseObj:  function($http){
+      return $http({method: 'GET', url: '/someUrl'});
+    }
+  }
+}
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Enviando Datos (se recomienda usar el 'data')</h2>
                         <pre>
-                            <code data-trim>
-                                $stateProvider
-                                .state(contacts)
-                                .state('contacts.list', {
-                                templateUrl: 'contacts.list.html',
-                                data: {
-                                customData1: 44,
-                                customData2: "red"
-                                }
-                                })
+                            <code >
+$stateProvider
+.state(contacts)
+.state('contacts.list', {
+templateUrl: 'contacts.list.html',
+data: {
+customData1: 44,
+customData2: "red"
+}
+})
                             </code>
                         </pre>
                     </section>
@@ -1023,10 +1023,10 @@ console.log(parseo);
                     <section>
                         <h2>Anidación de Estados</h2>
                       <pre>
-                            <code data-trim>
-                                $stateProvider
-                                .state('contacts', {})
-                                .state('contacts.list', {});
+                            <code >
+$stateProvider
+.state('contacts', {})
+.state('contacts.list', {});
                             </code>
                         </pre>
                         <p>También se puede utilizar la propiedad 'parent' para anidar</p>
@@ -1037,62 +1037,62 @@ console.log(parseo);
                     <section>
                         <h2>Estado Abstracto</h2>
                       <pre>
-                            <code data-trim>
-                                $stateProvider
-                                .state('contacts', {
-                                abstract: true,
-                                url: '/contacts',
+                            <code >
+$stateProvider
+.state('contacts', {
+abstract: true,
+url: '/contacts',
 
-                                // Note: abstract still needs a ui-view for its children to populate.
-                                // You can simply add it inline here.
-                                template: '<ui-view/>'
-                                })
-                                .state('contacts.list', {
-                                // url will become '/contacts/list'
-                                url: '/list'
-                                //...more
-                                })
-                                .state('contacts.detail', {
-                                // url will become '/contacts/detail'
-                                url: '/detail',
-                                //...more
-                                })
+// Note: abstract still needs a ui-view for its children to populate.
+// You can simply add it inline here.
+template: '<ui-view/>'
+})
+.state('contacts.list', {
+// url will become '/contacts/list'
+url: '/list'
+//...more
+})
+.state('contacts.detail', {
+// url will become '/contacts/detail'
+url: '/detail',
+//...more
+})
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Multiples Vistas</h2>
                       <pre>
-                            <code data-trim>
+                            <code>
                                 <body>
-                                <div ui-view="filters"></div>
-                                <div ui-view="tabledata"></div>
-                                <div ui-view="graph"></div>
-                                </body>
+<div ui-view="filters"></div>
+<div ui-view="tabledata"></div>
+<div ui-view="graph"></div>
+</body>
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Multiples Vistas</h2>
                       <pre>
-                            <code data-trim>
-                                $stateProvider
-                                .state('report',{
-                                views: {
-                                'filters': {
-                                templateUrl: 'report-filters.html',
-                                controller: function($scope){ ... controller stuff just for filters view ... }
-                                },
-                                'tabledata': {
-                                templateUrl: 'report-table.html',
-                                controller: function($scope){ ... controller stuff just for tabledata view ... }
-                                },
-                                'graph': {
-                                templateUrl: 'report-graph.html',
-                                controller: function($scope){ ... controller stuff just for graph view ... }
-                                },
-                                }
-                                })
+                            <code>
+$stateProvider
+.state('report',{
+views: {
+'filters': {
+templateUrl: 'report-filters.html',
+controller: function($scope){ ... controller stuff just for filters view ... }
+},
+'tabledata': {
+templateUrl: 'report-table.html',
+controller: function($scope){ ... controller stuff just for tabledata view ... }
+},
+'graph': {
+templateUrl: 'report-graph.html',
+controller: function($scope){ ... controller stuff just for graph view ... }
+},
+}
+})
                             </code>
                         </pre>
                     </section>
@@ -1106,29 +1106,29 @@ console.log(parseo);
                             <li>url: "/contacts?myParam1&myParam2"</li>
                         </ul>
                         <pre>
-                            <code data-trim>
-                                $stateProvider.state('contacts.detail', {
-                                url: '/contacts/:contactId',
-                                controller: function($stateParams){
-                                $stateParams.contactId
-                                }
-                                })
+                            <code>
+$stateProvider.state('contacts.detail', {
+url: '/contacts/:contactId',
+controller: function($stateParams){
+$stateParams.contactId
+}
+})
                             </code>
                         </pre>
                     </section>
                     <section>
                         <h2>Ruta Absoluta</h2>
                         <pre>
-                            <code data-trim>
-                                $stateProvider
-                                .state('contacts', {
-                                url: '/contacts',
-                                ...
-                                })
-                                .state('contacts.list', {
-                                url: '^/list',
-                                ...
-                                });
+                            <code >
+$stateProvider
+.state('contacts', {
+url: '/contacts',
+...
+})
+.state('contacts.list', {
+url: '^/list',
+...
+});
                             </code>
                         </pre>
                     </section>
