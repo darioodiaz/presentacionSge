@@ -341,7 +341,7 @@ console.log(parseo);
                         <pre>
                             <code code data-trim contenteditable>
 
-                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+                                <div id="todoPanel2" class="panel" ng-controller="defaultCtrl">
                                     <h3 class="panel-header">To Do List</h3>
 
                                     <div class="well">
@@ -418,7 +418,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-repeat-start y ng-repeat-end</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div class="panel panel-default">
                                     <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
                                         <h3 class="panel-title">{{subMenu.titulo}}</h3>
@@ -435,7 +435,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-switch</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div ng-switch on="data.mode">
                                     <div ng-switch-when="Table">
                                         <table class="table">
@@ -477,7 +477,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-class y ng-style</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -500,7 +500,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-class-even y ng-class-odd</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -522,7 +522,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-hide y ng-show</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -546,7 +546,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-if</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <td>
                                     <span ng-if="!item.complete">(Incomplete)</span>
                                     <span ng-if="item.complete">(Done)</span>
@@ -602,7 +602,7 @@ console.log(parseo);
                             para que los navegadores con HTML5 no realize validaciones y deje todo en manos de AngularJS
                         </p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <form name="myForm" novalidate ng-submit="addUser(newUser)"></form>
                             </code>
                         </pre>
@@ -630,7 +630,7 @@ console.log(parseo);
 
                     <section>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
 
                                 <div>Valid: {{myForm.$valid}}</div>
 
@@ -660,7 +660,7 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div class="well">
                                     Message: {{message}}
                                     <div> Valid:
@@ -697,7 +697,7 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
                                     <form name="myForm" novalidate>
                                         <div class="well">
@@ -735,8 +735,8 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code code data-trim contenteditable>
-                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+                            <code data-trim contenteditable>
+                                <div id="todoPanel1" class="panel" ng-controller="defaultCtrl">
                                     <form name="myForm" novalidate>
                                         <div class="well">
                                             <div class="checkbox">
@@ -758,7 +758,7 @@ console.log(parseo);
                     <section>
                         <h2>Los atributos de los elementos textarea son los mismos que los del input</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div class="form-group">
                                     <textarea name="sample" cols="40" rows="3"
                                               ng-model="textValue"
@@ -772,7 +772,7 @@ console.log(parseo);
                     <section>
                         <h2>Usando los elementos select</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div class="form-group">
                                     <label>Select an Action:</label>
                                     <select ng-model="selectValue"
@@ -783,7 +783,7 @@ console.log(parseo);
                         </pre>
                         <p>Se puede definir que valor vincular al modelo de la siguiente manera</p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <select ng-model="selectValue"
                                         ng-options="item.id as item.action for item in todos">
                                     <option value="">(Pick One)</option>
@@ -796,7 +796,7 @@ console.log(parseo);
 
                         <p>se utiliza para agrupar items basados en algun atributo</p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code data-trim contenteditable>
                                 <div class="well">
                                     <div class="form-group">
                                         <label>Select an Action:</label>
@@ -815,7 +815,94 @@ console.log(parseo);
                     </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h2> Dependency Injection</h2>
+                        <p>Hay 3 maneras informar que componente inyectar</p>
+                    </section>
+                    <section>
+                        <h2>Implicitamente por el nombre de los parámetros de la función</h2>
+                        <pre>
+                            <code data-trim contenteditable>
+                                function MyController($scope, greeter) {
+                                // ...
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Usando la anotación propiedad $injector</h2>
+                         <pre>
+                            <code data-trim contenteditable>
+                                var MyController = function(renamed$scope, renamedGreeter) {
+                                ...
+                                }
+                                MyController['$inject'] = ['$scope', 'greeter'];
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Usando la anotación de array en linea</h2>
 
+                        <p>Maneras informar que componente inyectar</p>
+                         <pre>
+                            <code data-trim contenteditable>
+                                someModule.factory('greeter', ['$window', function(renamed$window) {
+                                // ...
+                                }]);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2> Donde se puede usar?</h2>
+                    </section>
+                    <section>
+                        <h2>Factory Methods</h2>
+                         <pre>
+                            <code data-trim contenteditable>
+                                angular.module('myModule', [])
+                                .factory('serviceId', ['depService', function(depService) {
+                                ...
+                                }])
+                                .directive('directiveName', ['depService', function(depService) {
+                                ...
+                                }])
+                                .filter('filterName', ['depService', function(depService) {
+                                ...
+                                }]);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Module Methods</h2>
+                         <pre>
+                            <code data-trim contenteditable>
+                                angular.module('myModule', [])
+                                .config(['depProvider', function(depProvider){
+                                ...
+                                }])
+                                .run(['depService', function(depService) {
+                                ...
+                                }]);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Controllers</h2>
+                         <pre>
+                            <code data-trim contenteditable>
+                                someModule.controller('MyController', ['$scope', 'dep1', 'dep2', function($scope, dep1,
+                                dep2) {
+                                ...
+                                $scope.aMethod = function() {
+                                ...
+                                }
+                                ...
+                                }]);
+                            </code>
+                        </pre>
+                    </section>
+                </section>
 
 
 
