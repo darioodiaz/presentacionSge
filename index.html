@@ -673,7 +673,146 @@ console.log(parseo);
                             </code>
                         </pre>
                     </section>
+                    <section>
+                        <h2>Atributos de las Directivas</h2>
+                        <ul>
+                            <li>ng-model</li>
+                            <li>ng-change</li>
+                            <li>ng-minlength</li>
+                            <li>ng-maxlength</li>
+                            <li>ng-pattern</li>
+                            <li>ng-required</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Usando elementos input </h2>
+                        <ul>
+                            <li>ng-model</li>
+                            <li>ng-change</li>
+                            <li>ng-minlength</li>
+                            <li>ng-maxlength</li>
+                            <li>ng-pattern</li>
+                            <li>ng-required</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+                                    <form name="myForm" novalidate>
+                                        <div class="well">
+                                            <div class="form-group">
+                                                <label>Text:</label>
+                                                <input name="sample" class="form-control" ng-model="inputValue"
+                                                       ng-required="requireValue" ng-minlength="3"
+                                                       ng-maxlength="10" ng-pattern="matchPattern">
+                                            </div>
+                                        </div>
+                                        <div class="well">
+                                            <p>Required Error: {{myForm.sample.$error.required}}</p>
 
+                                            <p>Min Length Error: {{myForm.sample.$error.minlength}}</p>
+
+                                            <p>Max Length Error: {{myForm.sample.$error.maxlength}}</p>
+
+                                            <p>Pattern Error: {{myForm.sample.$error.pattern}}</p>
+
+                                            <p>Element Valid: {{myForm.sample.$valid}}</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Usando elementos checkboxes </h2>
+                        <ul>
+                            <li>ng-model</li>
+                            <li>ng-change</li>
+                            <li>ng-true-value</li>
+                            <li>ng-false-value</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+                                    <form name="myForm" novalidate>
+                                        <div class="well">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input name="sample" type="checkbox" ng-model="inputValue"
+                                                           ng-true-value="Hurrah!" ng-false-value="Boo!">
+                                                    This is a checkbox
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="well">
+                                            <p>Model Value: {{inputValue}}</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Los atributos de los elementos textarea son los mismos que los del input</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="form-group">
+                                    <textarea name="sample" cols="40" rows="3"
+                                              ng-model="textValue"
+                                              ng-required="requireValue" ng-minlength="3"
+                                              ng-maxlength="10" ng-pattern="matchPattern">
+                                    </textarea>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Usando los elementos select</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="form-group">
+                                    <label>Select an Action:</label>
+                                    <select ng-model="selectValue"
+                                            ng-options="item.action for item in todos">
+                                    </select>
+                                </div>
+                            </code>
+                        </pre>
+                        <p>Se puede definir que valor vincular al modelo de la siguiente manera</p>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <select ng-model="selectValue"
+                                        ng-options="item.id as item.action for item in todos">
+                                    <option value="">(Pick One)</option>
+                                </select>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Creando elementos optgroup</h2>
+
+                        <p>se utiliza para agrupar items basados en algun atributo</p>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="well">
+                                    <div class="form-group">
+                                        <label>Select an Action:</label>
+                                        <select ng-model="selectValue"
+                                                ng-options="item.action group by item.place for item in todos">
+                                            <option value="">(Pick One)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="well">
+                                    <p>Selected: {{selectValue || 'None'}}</p>
+                                </div>
+                            </code>
+                        </pre>
+                        <img src="images/optgroup.jpg">
+                    </section>
                 </section>
 
 
