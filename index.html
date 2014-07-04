@@ -288,7 +288,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-bind o {{ }}</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
                                 $scope.todos = [ {accion:'Caminar'}, {accion:'Correr'}]
 
                                 <div>Hay {{todos.length}} elementos.</div>
@@ -302,7 +302,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-bind-template</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
                                 <div ng-bind-template="Primero: {{todos[0].accion}}. Segundo: {{todos[1].accion}}">
 
                                 </div>
@@ -316,7 +316,7 @@ console.log(parseo);
                             Crea una vinculación utilizando la propiedad innerHTML de un elemento HTML.
                         </p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
                                 $scope.contenidoHTML = '<a href="#" class="btn btn-default">Link</a>';
 
                                 <div><p ng-bind-html="contenidoHTML"></p></div>
@@ -328,7 +328,7 @@ console.log(parseo);
                         <h2>ng-non-bindable</h2>
                         <p>Previene que AngularsJS vincule alguna expression</p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
 
                                 <div ng-non-bindable>
                                     AngularJS usa {{ y }} caracteres como plantilla.
@@ -339,7 +339,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-model</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
 
                                 <div id="todoPanel2" class="panel" ng-controller="defaultCtrl">
                                     <h3 class="panel-header">To Do List</h3>
@@ -365,7 +365,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-cloak</h2>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
                                 <div class="well">
                                     <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
                                         <label ng-cloak>
@@ -382,7 +382,7 @@ console.log(parseo);
                         <h2>ng-include</h2>
                         <p>src, onload, autoscroll</p>
                         <pre>
-                            <code code data-trim contenteditable>
+                            <code code data-trim >
 
                                 <ng-include src="'table.html'" onload="" autoscroll=""></ng-include>
 
@@ -418,7 +418,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-repeat-start y ng-repeat-end</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div class="panel panel-default">
                                     <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
                                         <h3 class="panel-title">{{subMenu.titulo}}</h3>
@@ -435,7 +435,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-switch</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div ng-switch on="data.mode">
                                     <div ng-switch-when="Table">
                                         <table class="table">
@@ -477,7 +477,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-class y ng-style</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -500,7 +500,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-class-even y ng-class-odd</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -522,7 +522,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-hide y ng-show</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -546,7 +546,7 @@ console.log(parseo);
                     <section>
                         <h2>ng-if</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <td>
                                     <span ng-if="!item.complete">(Incomplete)</span>
                                     <span ng-if="item.complete">(Done)</span>
@@ -602,7 +602,7 @@ console.log(parseo);
                             para que los navegadores con HTML5 no realize validaciones y deje todo en manos de AngularJS
                         </p>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <form name="myForm" novalidate ng-submit="addUser(newUser)"></form>
                             </code>
                         </pre>
@@ -630,7 +630,7 @@ console.log(parseo);
 
                     <section>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
 
                                 <div>Valid: {{myForm.$valid}}</div>
 
@@ -660,7 +660,7 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div class="well">
                                     Message: {{message}}
                                     <div> Valid:
@@ -697,7 +697,7 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
                                     <form name="myForm" novalidate>
                                         <div class="well">
@@ -735,7 +735,7 @@ console.log(parseo);
                     </section>
                     <section>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div id="todoPanel1" class="panel" ng-controller="defaultCtrl">
                                     <form name="myForm" novalidate>
                                         <div class="well">
@@ -758,7 +758,7 @@ console.log(parseo);
                     <section>
                         <h2>Los atributos de los elementos textarea son los mismos que los del input</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div class="form-group">
                                     <textarea name="sample" cols="40" rows="3"
                                               ng-model="textValue"
@@ -772,7 +772,7 @@ console.log(parseo);
                     <section>
                         <h2>Usando los elementos select</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div class="form-group">
                                     <label>Select an Action:</label>
                                     <select ng-model="selectValue"
@@ -783,7 +783,7 @@ console.log(parseo);
                         </pre>
                         <p>Se puede definir que valor vincular al modelo de la siguiente manera</p>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <select ng-model="selectValue"
                                         ng-options="item.id as item.action for item in todos">
                                     <option value="">(Pick One)</option>
@@ -796,7 +796,7 @@ console.log(parseo);
 
                         <p>se utiliza para agrupar items basados en algun atributo</p>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 <div class="well">
                                     <div class="form-group">
                                         <label>Select an Action:</label>
@@ -823,7 +823,7 @@ console.log(parseo);
                     <section>
                         <h2>Implicitamente por el nombre de los parámetros de la función</h2>
                         <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 function MyController($scope, greeter) {
                                 // ...
                                 }
@@ -833,7 +833,7 @@ console.log(parseo);
                     <section>
                         <h2>Usando la anotación propiedad $inject</h2>
                          <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 var MyController = function(renamed$scope, renamedGreeter) {
                                 ...
                                 }
@@ -846,7 +846,7 @@ console.log(parseo);
 
                         <p>Maneras informar que componente inyectar</p>
                          <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 someModule.factory('greeter', ['$window', function(renamed$window) {
                                 // ...
                                 }]);
@@ -859,7 +859,7 @@ console.log(parseo);
                     <section>
                         <h2>Factory Methods</h2>
                          <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 angular.module('myModule', [])
                                 .factory('serviceId', ['depService', function(depService) {
                                 ...
@@ -876,7 +876,7 @@ console.log(parseo);
                     <section>
                         <h2>Module Methods</h2>
                          <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 angular.module('myModule', [])
                                 .config(['depProvider', function(depProvider){
                                 ...
@@ -890,7 +890,7 @@ console.log(parseo);
                     <section>
                         <h2>Controllers</h2>
                          <pre>
-                            <code data-trim contenteditable>
+                            <code data-trim >
                                 someModule.controller('MyController', ['$scope', 'dep1', 'dep2', function($scope, dep1,
                                 dep2) {
                                 ...
@@ -904,9 +904,242 @@ console.log(parseo);
                     </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h2>Angular UI-Router</h2>
 
+                        <p>Provee una manera diferente de trabajar que ngRoute de AngularJS</p>
+                    </section>
+                    <section>
+                        <h2>Estados vs Ruta URL</h2>
 
+                        <p>
+                            Con los estados las vistas no estan acopladas a una URL y permite cambiar de vistas
+                            internamente sin la necesidad de cambiar la URL
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Donde configurar los estados?</h2>
 
+                        <p>$stateProvider es el encargado de proveer de los estados en la aplicación y es configurado
+                            dentro del .config() del módulo</p>
+                    </section>
+                    <section>
+                        <h2>Ejemplo</h2>
+                        <pre>
+                            <code data-trim>
+                                <!-- in index.html -->
+                                <body ng-controller="MainCtrl">
+                                <section ui-view></section>
+                                </body>
+                            </code>
+                            <code data-trim>
+                                // in app-states.js (or whatever you want to name it)
+                                $stateProvider.state('contacts', {
+                                template: '<h1>My Contacts</h1>'
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Donde se inserta la plantilla?</h2>
+                        <p>Cuando se activa un estado, la plantilla se inserta en el ui-view de su padre, si no lo tiene entonces se inserta en el index</p>
+                    </section>
+                    <section>
+                        <h2>Activando un estado</h2>
+                        <ul>
+                            <li>Llamando a $state.go()</li>
+                            <li>Hacer click en un link con ui-sref</li>
+                            <li>Navegar la URL asociada al estado</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Configurando el template</h2>
+                        <ul>
+                            <li>template: html</li>
+                            <li>templateUrl: page.html</li>
+                            <li>templateUrl:function()</li>
+                            <li>templateProvider: function()</li>
+                        </ul>
+
+                    </section>
+                    <section>
+                        <h2>Configurando el controllador</h2>
+                        <ul>
+                            <li>controller: function()</li>
+                            <li>controller: 'MyCtrl'</li>
+                            <li>controller: 'MyCtrl as contact'</li>
+                            <li>controllerProvider: function()</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Resolve</h2>
+                        <p>El controlador no se cargará hasta que no se hayan resuelto todas las dependencias</p>
+                        <pre>
+                            <code data-trim>
+                                $stateProvider.state('myState', {
+                                  controller: function(){},
+                                  resolve:{
+                                    objetoSimple:function(){
+                                      return {value:'asd'};
+                                    },
+                                    //Retorna un promise, es lo mas utilizado
+                                    promiseObj:  function($http){
+                                      return $http({method: 'GET', url: '/someUrl'});
+                                    }
+                                  }
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Enviando Datos (se recomienda usar el 'data')</h2>
+                        <pre>
+                            <code data-trim>
+                                $stateProvider
+                                .state(contacts)
+                                .state('contacts.list', {
+                                templateUrl: 'contacts.list.html',
+                                data: {
+                                customData1: 44,
+                                customData2: "red"
+                                }
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Eventos</h2>
+                        <p>Son disparados desde $rootScope</p>
+                        <ul>
+                            <li>$stateChangeStart</li>
+                            <li>$stateNotFound</li>
+                            <li>$stateChangeSuccess</li>
+                            <li>$stateChangeError</li>
+                            <li>$viewContentLoading </li>
+                            <li>$viewContentLoaded</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Anidación de Estados</h2>
+                      <pre>
+                            <code data-trim>
+                                $stateProvider
+                                .state('contacts', {})
+                                .state('contacts.list', {});
+                            </code>
+                        </pre>
+                        <p>También se puede utilizar la propiedad 'parent' para anidar</p>
+                    </section>
+                    <section>
+                        <p>Los hijos heredan las dependencias resueltas por su padre y los datos que hayan pasado, además si las vistas están anidadas los $scope se heredarán</p>
+                    </section>
+                    <section>
+                        <h2>Estado Abstracto</h2>
+                      <pre>
+                            <code data-trim>
+                                $stateProvider
+                                .state('contacts', {
+                                abstract: true,
+                                url: '/contacts',
+
+                                // Note: abstract still needs a ui-view for its children to populate.
+                                // You can simply add it inline here.
+                                template: '<ui-view/>'
+                                })
+                                .state('contacts.list', {
+                                // url will become '/contacts/list'
+                                url: '/list'
+                                //...more
+                                })
+                                .state('contacts.detail', {
+                                // url will become '/contacts/detail'
+                                url: '/detail',
+                                //...more
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Multiples Vistas</h2>
+                      <pre>
+                            <code data-trim>
+                                <body>
+                                <div ui-view="filters"></div>
+                                <div ui-view="tabledata"></div>
+                                <div ui-view="graph"></div>
+                                </body>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Multiples Vistas</h2>
+                      <pre>
+                            <code data-trim>
+                                $stateProvider
+                                .state('report',{
+                                views: {
+                                'filters': {
+                                templateUrl: 'report-filters.html',
+                                controller: function($scope){ ... controller stuff just for filters view ... }
+                                },
+                                'tabledata': {
+                                templateUrl: 'report-table.html',
+                                controller: function($scope){ ... controller stuff just for tabledata view ... }
+                                },
+                                'graph': {
+                                templateUrl: 'report-graph.html',
+                                controller: function($scope){ ... controller stuff just for graph view ... }
+                                },
+                                }
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Parámetros</h2>
+                        <p>Se recupera el valor pasado por medio de $stateParams</p>
+                        <ul>
+                            <li>url: "/contacts/:contactId"</li>
+                            <li>url: "/contacts/{contactId}"</li>
+                            <li>url: "/contacts/{contactId:[0-9]{1,8}}"</li>
+                            <li>url: "/contacts?myParam1&myParam2"</li>
+                        </ul>
+                        <pre>
+                            <code data-trim>
+                                $stateProvider.state('contacts.detail', {
+                                url: '/contacts/:contactId',
+                                controller: function($stateParams){
+                                $stateParams.contactId
+                                }
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Ruta Absoluta</h2>
+                        <pre>
+                            <code data-trim>
+                                $stateProvider
+                                .state('contacts', {
+                                url: '/contacts',
+                                ...
+                                })
+                                .state('contacts.list', {
+                                url: '^/list',
+                                ...
+                                });
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Opciones para redireccionar</h2>
+                        <ul>
+                            <li>$urlRouterProvider.when('', '/index');</li>
+                            <li>$urlRouterProvider.otherwise('/index');</li>
+                        </ul>
+                    </section>
+                </section>
 
             </div>
 
