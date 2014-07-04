@@ -584,6 +584,104 @@ console.log(parseo);
                         <li>ng-submit</li>
                     </ul>
                 </section>
+                <section>
+                    <section>
+                        <h2>Directivas para Formularios</h2>
+                    </section>
+                    <section>
+                        <p>
+                            AngularJS aplica las directivas para formularios
+                            automaticamente cuando encuentra elementos del tipo
+                            form, input, select, y textarea.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Para utilizar las validaciones hace falta
+                            utilizar el elemento FORM, el atributo NOVALIDATE es utilizado
+                            para que los navegadores con HTML5 no realize validaciones y deje todo en manos de AngularJS
+                        </p>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <form name="myForm" novalidate ng-submit="addUser(newUser)"></form>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Monitoreo del Formulario</h2>
+                        <ul>
+                           <li>
+                               <p><strong>$pristine</strong> true si el usuario no interactuó con el elemento/formulario</p>
+                           </li>
+                           <li>
+                               <p><strong>$dirty</strong> true si el usuario interactuó con el elemento/formulario</p>
+                           </li>
+                           <li>
+                               <p><strong>$valid</strong> true si el contenido del elemento/formulario es válido</p>
+                           </li>
+                           <li>
+                               <p><strong>$invalid</strong> true si el contenido del elemento/formulario es inválido</p>
+                           </li>
+                           <li>
+                               <p><strong>$error</strong> provee de información del error producido.</p>
+                           </li>
+                       </ul>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code code data-trim contenteditable>
+
+                                <div>Valid: {{myForm.$valid}}</div>
+
+                                <button type="submit"
+                                        class="btn btn-primary btn-block"
+                                        ng-disabled="myForm.$invalid">OK</button>
+
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>CSS utlizado por AngularJS</h2>
+                        <ul>
+                            <li>
+                                <p><strong>ng-pristine</strong> los elementos con los que no interactuó el usuario son añadidos a esta clase</p>
+                            </li>
+                            <li>
+                                <p><strong> ng-dirty</strong> los elementos con los que interactuó el usuario son añadidos a esta clase</p>
+                            </li>
+                            <li>
+                                <p><strong>ng-valid</strong> los elementos que son válidos son añadidos a esta clase</p>
+                            </li>
+                            <li>
+                                <p><strong>ng-invalid</strong> los elementos que no son válidos son añadidos a esta clase</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="well">
+                                    Message: {{message}}
+                                    <div> Valid:
+                                        <span class="summary"
+                                              ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">{{myForm.$valid}}
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </code>
+                        </pre>
+                    </section>
+
+                </section>
+
+
+
+
+
+
+
             </div>
 
 		</div>
