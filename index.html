@@ -31,7 +31,7 @@
 							<li class="fragment">JSON</li>
 							<li class="fragment">Closure scopes</li>
 						</ul>
-						<p class="fragment"><a href="#/3">Angular</a></p>
+						<p class="fragment"><a href="#/6">Angular</a></p>
 						<ul>
 							<li class="fragment">Expression y {{Brackets}}</li>
 							<li class="fragment">Modules, services, y mas...</li>
@@ -48,7 +48,7 @@
 				<section>
 					<h2>Agenda</h2>
 					<p>
-						<p class="fragment"><a href="#/3">Ending</a></p>
+						<p class="fragment"><a href="sgeComponents.html">Ending</a></p>
 						<ul>
 							<li class="fragment">Angular y Jboss</li> <!-- Ivo -->
 							<li class="fragment">Angular y Require JS</li> <!-- Ivo -->
@@ -260,22 +260,122 @@ console.log(parseo);
 						<li><a href="#/9">Scopes y scopes</a></li>
 						<li><a href="#/10">MVC en angular</a></li>
 						<li><a href="#/11">Angular Builts-in</a></li> <!-- Ivo -->
-						<li><a href="#/12">DI y buenas practicas</a></li> <!-- Ivo -->
-						<li><a href="#/13">Angular routing con ui-router</a></li> <!-- Ivo -->
-						<li><a href="#/14">Estructura de carpetas</a></li> <!-- Ivo -->
+						<li><a href="#/18">DI y buenas practicas</a></li> <!-- Ivo -->
+						<li><a href="#/19">Angular routing con ui-router</a></li> <!-- Ivo -->
+						<li><a href="#/20">Estructura de carpetas</a></li> <!-- Ivo -->
 					</ul>
 				</section>
 			</section> 
 
-			<!-- Angular: Expression and brackets -->
+        <!-- Angular -->
+
+
+            <!-- Angular: Expression and brackets -->
+                        <!-- Angular: Expression and brackets -->
+            <section>
+                <section>
+                    <h2>Expresiones en Angular</h2>
+                    <p class="fragment">Las expresiones en Angular son sentencias comunes de JS con las siguientes restricciones</p>
+                    <p class="fragment">
+                        <ul>
+                            <li>Cada expresion es evaluada en el scope actual</li>
+                            <li>Si la expresion fuera a dar un error o fuera invalida se devuelve null y el programa continua</li>
+                            <li>No se permiten sentencias condiconales, ciclos o excepciones</li>
+                            <li>Se pueden usar los filtros de Angular o propios definidos en el modulo</li>
+                            <li>Si se desea usar una expresion mas compleja, se puede usar <span style="font-style: italic;">$eval</span> proporcionado en el scope</li>
+                        </ul>
+                    </p>
+                </section>
+                <!-- end Angular: Expression and brackets -->
+            </section>
+
+            <!-- Modules, services y mas...  -->
                 <section>
                     <section>
-                        <h2>Expresiones en Angular</h2>
+                        <h2>Modules</h2>
+                        <p class="fragment">En Angular un modulo es un conjunto de elementos que coordinan para trabajar</p>
+                        <p class="fragment">
+                            Un modulo Angular puede estar compuesto por
+                            <ul>
+                                <li>Controladores</li>
+                                <li>Servicios</li>
+                                <li>Directivas</li>
+                                <li>Otros modulos</li>
+                            </ul>
+                        </p>
+                        <p class="fragment">Un modulo Angular se crea de la siguiente forma:</p>
+                        <pre><code class="fragment" data-trim contenteditable>
+                            angular.module("NOMBRE", []);
+                        </code></pre>
+                        <p class="fragment">Tambien puede ser guardado en una variable para referirse a el despues</p>
+                        <pre><code class="fragment" data-trim contenteditable>
+                            var miModulo = angular.module("NOMBRE", []);
+                        </code></pre>
                     </section>
-                    <!-- end Angular: Expression and brackets -->
 
-                    <!-- end Angular -->
+                <section>
+                    <h2>Controladores</h2>
+                    <p class="fragment">Son los encargados de manipular o brindar los comportamientos necesarios para trabajar con las vistas (paginas para los usuarios) y los datos (modelos). Va a ser el encargado de trabajar en un ambito HTML</p>
+                    <p class="fragment">
+                        Para crear un controlador en Angular:
+                    </p>
+                    <pre><code class="fragment" data-trim contenteditable>
+var miModulo = angular.module("NOMBRE MODULO", []);
+miModulo.contoller("NombreCtrl", function($scope) {
+    //Codigo del controlador
+});
+                    </code></pre>
                 </section>
+
+                <section>
+                    <h2>Services vs Factory</h2>
+                    <p class="fragment">En Angular hay 2 formas de brindar servicios. Una es por factory y la otra por service</p>
+                    <p class="fragment">
+                        La diferencia es que factory devuelve siempre la MISMA instancia de un objeto, mientras que service crea una instancia nueva cada vez que se llama
+                    </p>
+                    <p class="fragment">
+                        Para realizar peticiones ajax, por ejemplo, usariamos un factory ya que cada peticion ajax es asincronica y pueden especificar una funcion callback diferente a cada llamado, por mas que el objeto factory sea el mismo, la peticion respondera a distintos callbacks, sin necesidad de crear objetos distintos.
+                    </p>
+                    <pre><code class="fragment" data-trim contenteditable>
+var miModulo = angular.module("NOMBRE MODULO", []);
+miModulo.factory("NombreFactory", function() {
+    //Los factory devuelven un objeto
+    var miFactory = {};
+    miFactory.servicio = function() { ... }
+    return miFactory;
+});
+                    </code></pre>
+
+                    <pre><code class="fragment" data-trim contenteditable>
+var miModulo = angular.module("NOMBRE MODULO", []);
+miModulo.service("NombreSrv", function() {
+    //Los service devuelven una funcion que sera usada como constructora, esta funcion puede recibir parametros
+    var miService = function() {
+
+    };  
+    return miService;
+});
+                    </code></pre>
+                </section>
+
+            </section>
+
+            <section>
+                    <h2>Scopes y scopes</h2>
+                    <p class="fragment">En angular los scopes trabajan por herencia, es decir, si tenemos anidamiento de scopes/controllers, si una propiedad no existe en el scope hijo se busca en el padre y ambos trabajan sobre el, hasta que el hijo posea la propiedad</p>
+                    <p class="fragment">Todos los scopes tiene un atributo llamado <span style="font-style: italic">$root</span> que representa el scope principal del modulo.</p>
+                    <p class="fragment">Dentro de los controllers se pueden asignar funcionalidad a los scopes a traves de la DI. En angular sus servicios de inyeccion llevan el simbolo $ delante.</p>
+                </section>
+
+            <section>
+                    <h2>MVC en Angular</h2>
+                    <p class="fragment">MVC (Model View Controller)</p>
+                    <p class="fragment">En Angular la vista (view) es la pagina HTML/JSP</p>
+                    <p class="fragment">el controlador (controller) es uno de los definidos mediante modulo.controller(...)</p>
+                    <p class="fragment">el modelo es implicito y se representa mediante el $scope que es un modelo global que puede tener propiedades (funciones, objetos, atributos) que representarian nuestros modelos de datos para trabajar con los Ctrls y las vista</p>
+                    <a href="ejemploAngular.html" target="_blank">Ejemplo Angular</a>
+                </section>
+
 
                 <section>
                     <h2>Angular Builts-in</h2>
