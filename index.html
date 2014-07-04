@@ -268,227 +268,205 @@ console.log(parseo);
 			</section> 
 
 			<!-- Angular: Expression and brackets -->
-			<section>
-				<section>
-					<h2>Expresiones en Angular</h2>
-				</section>
-				<!-- end Angular: Expression and brackets -->
+                <section>
+                    <section>
+                        <h2>Expresiones en Angular</h2>
+                    </section>
+                    <!-- end Angular: Expression and brackets -->
 
-				<!-- end Angular -->
-			</section>
+                    <!-- end Angular -->
+                </section>
+
                 <section>
                     <h2>Angular Builts-in</h2>
                 </section>
                 <section>
-<section>
-  <h2>Directivas vinculantes</h2>
-</section>
-
-<section>
-<h2>ng-bind o {{ }}</h2>
-<pre>
-<code code data-trim contenteditable>
-
-$scope.todos = [ {accion:'Caminar'}, {accion:'Correr'}]
-
-<div>Hay {{todos.length}} elementos.</div>
-
-<div>
-   Hay <span ng-bind="todos.length"></span> elementos.
-</div>
-
-
-</code>
-</pre>
-</section>
                     <section>
+                        <h2>Directivas vinculantes</h2>
+                    </section>
 
-                        <h2>ng-bind-template</h2>
-<pre>
-<code code data-trim contenteditable>
+                    <section>
+                        <h2>ng-bind o {{ }}</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                $scope.todos = [ {accion:'Caminar'}, {accion:'Correr'}]
 
-<div ng-bind-template="Primero: {{todos[0].accion}}. Segundo: {{todos[1].accion}}">
+                                <div>Hay {{todos.length}} elementos.</div>
 
-</div>
-
-</code>
-</pre>
-
+                                <div>
+                                    Hay <span ng-bind="todos.length"></span> elementos.
+                                </div>
+                            </code>
+                        </pre>
                     </section>
                     <section>
+                        <h2>ng-bind-template</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div ng-bind-template="Primero: {{todos[0].accion}}. Segundo: {{todos[1].accion}}">
 
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
                         <h2>ng-bind-html</h2>
-
                         <p>
                             <atrong>Peligroso!</atrong>
                             Crea una vinculación utilizando la propiedad innerHTML de un elemento HTML.
                         </p>
-<pre>
-<code code data-trim contenteditable>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                $scope.contenidoHTML = '<a href="#" class="btn btn-default">Link</a>';
 
-$scope.contenidoHTML = '<a href="#" class="btn btn-default">Link</a>';
+                                <div><p ng-bind-html="contenidoHTML"></p></div>
 
-<div>
-   <p ng-bind-html="contenidoHTML"></p>
-</div>
-
-
-</code>
-</pre>
+                            </code>
+                        </pre>
                     </section>
                     <section>
-
                         <h2>ng-non-bindable</h2>
+                        <p>Previene que AngularsJS vincule alguna expression</p>
+                        <pre>
+                            <code code data-trim contenteditable>
 
-                        <p>
-                            Previene que AngularsJS vincule alguna expression
-                        </p>
-<pre>
-<code code data-trim contenteditable>
-
-<div ng-non-bindable>
-  AngularJS usa {{ y }} caracteres como plantilla.
-</div>
-</code>
-</pre>
+                                <div ng-non-bindable>
+                                    AngularJS usa {{ y }} caracteres como plantilla.
+                                </div>
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>ng-model</h2>
-<pre>
-<code code data-trim contenteditable>
+                        <pre>
+                            <code code data-trim contenteditable>
 
-<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
-  <h3 class="panel-header">To Do List</h3>
+                                <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+                                    <h3 class="panel-header">To Do List</h3>
 
-  <div class="well">
-     <div>El primer item es: {{todos[0].accion}}</div>
-  </div>
-     <div class="form-group well">
-        <label for="primerItem">Set First Item:</label>
-        <input id="primerItem" name="primerItem" class="form-control" ng-model="todos[0].accion"/>
-     </div>
-</div>
+                                    <div class="well">
+                                        <div>El primer item es: {{todos[0].accion}}</div>
+                                    </div>
+                                    <div class="form-group well">
+                                        <label for="primerItem">Set First Item:</label>
+                                        <input id="primerItem" name="primerItem" class="form-control"
+                                               ng-model="todos[0].accion"/>
+                                    </div>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
 
-</code>
-</pre>
+                <section>
+                    <section>
+                        <h2>Directivas plantilla</h2>
+                    </section>
+                    <section>
+                        <h2>ng-cloak</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="well">
+                                    <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
+                                        <label ng-cloak>
+                                            <input type="radio" ng-model="data.mode"
+                                                   value="{{button}}" ng-checked="$first">
+                                            {{button}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>ng-include</h2>
+                        <p>src, onload, autoscroll</p>
+                        <pre>
+                            <code code data-trim contenteditable>
 
-</section>
-</section>
+                                <ng-include src="'table.html'" onload="" autoscroll=""></ng-include>
 
-<section>
-<section>
-   <h2>Directivas plantilla</h2>
-</section>
+                            </code>
+                        </pre>
+                    </section>
 
-<section>
-<h2>ng-cloak</h2>
-<p></p>
-<pre>
-<code code data-trim contenteditable>
-<div class="well">
-    <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
-        <label ng-cloak>
-            <input type="radio" ng-model="data.mode"
-                   value="{{button}}" ng-checked="$first">
-            {{button}}
-        </label>
-    </div>
-</div>
-</code>
-</pre>
-</section>
+                    <section>
+                        <h2>ng-repeat</h2>
+                        <p>$index, $first, $middle, $last, $even, $odd </p>
+                        <pre>
+                            <code data-trim>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Acción</th>
+                                        <th>Listo</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in todos">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{item.accion}}</td>
+                                        <td>{{item.completo}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </code>
+                        </pre>
+                    </section>
 
-<section>
-<h2>ng-include</h2>
-<p>src, onload, autoscroll</p>
-<pre>
-<code code data-trim contenteditable>
+                    <section>
+                        <h2>ng-repeat-start y ng-repeat-end</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
+                                        <h3 class="panel-title">{{subMenu.titulo}}</h3>
+                                    </div>
+                                    <div class="list-group" ng-repeat-end>
+                                        <a ng-repeat="item in subMenu.items" class="list-group-item">
+                                            {{item.nombre}}</a>
+                                    </div>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
 
-<ng-include src="'table.html'" onload="" autoscroll=""></ng-include>
-
-</code>
-</pre>
-</section>
-
-<section>
-<h2>ng-repeat</h2>
-<p>$index, $first, $middle, $last, $even, $odd </p>
-<pre>
-<code data-trim >
-<table class="table">
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Acción</th>
-        <th>Listo</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="item in todos">
-        <td>{{$index + 1}}</td>
-        <td>{{item.accion}}</td>
-        <td>{{item.completo}}</td>
-    </tr>
-    </tbody>
-</table>
-</code>
-</pre>
-</section>
-
-<section>
-<h2>ng-repeat-start y ng-repeat-end</h2>
-<p></p>
-<pre>
-<code code data-trim contenteditable>
-<div class="panel panel-default">
-    <div class="panel-heading" ng-repeat-start="subMenu in data.menu.subMenu">
-        <h3 class="panel-title">{{subMenu.titulo}}</h3>
-    </div>
-    <div class="list-group" ng-repeat-end>
-        <a ng-repeat="item in subMenu.items" class="list-group-item"> {{item.nombre}}</a>
-    </div>
-</div>
-</code>
-</pre>
-</section>
-
-<section>
-<h2>ng-switch</h2>
-<p></p>
-<pre>
-<code code data-trim contenteditable>
-<div ng-switch on="data.mode">
-    <div ng-switch-when="Table">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Action</th>
-                <th>Done</th>
-            </tr>
-            </thead>
-            <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
-                <td>{{$index + 1}}</td>
-                <td ng-repeat="prop in item">{{prop}}</td>
-            </tr>
-        </table>
-    </div>
-    <div ng-switch-when="List">
-        <ol>
-            <li ng-repeat="item in todos">
-                {{item.action}}<span ng-if="item.complete"> (Done)</span>
-            </li>
-        </ol>
-    </div>
-    <div ng-switch-default>
-        Select another option to display a layout
-    </div>
-</div>
-</code>
-</pre>
-</section>
-
-</section>
+                    <section>
+                        <h2>ng-switch</h2>
+                        <pre>
+                            <code code data-trim contenteditable>
+                                <div ng-switch on="data.mode">
+                                    <div ng-switch-when="Table">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Action</th>
+                                                <th>Done</th>
+                                            </tr>
+                                            </thead>
+                                            <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
+                                                <td>{{$index + 1}}</td>
+                                                <td ng-repeat="prop in item">{{prop}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div ng-switch-when="List">
+                                        <ol>
+                                            <li ng-repeat="item in todos">
+                                                {{item.action}}<span ng-if="item.complete"> (Done)</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div ng-switch-default>
+                                        Select another option to display a layout
+                                    </div>
+                                </div>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
 
 
             </div>
