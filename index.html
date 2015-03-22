@@ -331,10 +331,10 @@ miModulo.contoller("NombreCtrl", function($scope) {
                     <h2>Services vs Factory</h2>
                     <p class="fragment">En Angular hay 2 formas de brindar servicios. Una es por factory y la otra por service</p>
                     <p class="fragment">
-                        La diferencia es que factory devuelve siempre la MISMA instancia de un objeto, mientras que service crea una instancia nueva cada vez que se llama
+                        En esencia son los mismos, la diferencia recabe en que angular tiene una estructura para poder utilizar servicios en distintas etapas de la aplicacion. Por ejemplo, si necesitaramos un servicio durante la configuracion del la aplicacion (app.config block) seria necesario un Provider del servicio y un provider contiene un factory que devuevle un service.
                     </p>
                     <p class="fragment">
-                        Para realizar peticiones ajax, por ejemplo, usariamos un factory ya que cada peticion ajax es asincronica y pueden especificar una funcion callback diferente a cada llamado, por mas que el objeto factory sea el mismo, la peticion respondera a distintos callbacks, sin necesidad de crear objetos distintos.
+                        Es decir, usar factory o service a niveles de nuestro uso es indiferente, pero a un uso mas avanzado de angular es necesario saber que un service es devuelto por un factory. (mas info web oficial de angular)
                     </p>
                     <pre><code class="fragment" data-trim contenteditable>
 var miModulo = angular.module("NOMBRE MODULO", []);
